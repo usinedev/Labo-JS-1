@@ -116,5 +116,9 @@ body {
     }
   }
 
+  &.goat {
+    background-image: url('./consignes/goat.webp');
+    background-size: cover;
+  }
 }
 
