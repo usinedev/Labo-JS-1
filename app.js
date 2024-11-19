@@ -9,27 +9,17 @@ function validate() {
         const result = document.querySelector('input[name="q'+i+'"]:checked')
         const pAnswer = document.getElementById('answerQ'+i)
         const questionBox = document.getElementById('question'+i)
-        let valide = true
-        if (result) {
-            if (result.value == responses[i - 1]) {
-                questionBox.classList.add('good')
-                pAnswer.textContent = 'Bonne réponse !'
-            }
-            else if (result.value !== responses[i - 1]) {
-                questionBox.classList.add('bad')
-                pAnswer.textContent = 'Mauvaise réponse !'
-                badAnswer+=1
-            }    
+        if (result.value == responses[i - 1]) {
+            questionBox.classList.add('good')
+            pAnswer.textContent = 'Bonne réponse !'
         }
-        else {
-            badAnswer = null
-            break
-        }
+        else if (result.value !== responses[i - 1]) {
+            questionBox.classList.add('bad')
+            pAnswer.textContent = 'Mauvaise réponse !'
+            badAnswer+=1
+        }  
     }
     switch(badAnswer) {
-        case null :
-            info.innerHTML = 'Répond à toutes les question pour pouvoir valider.'
-            break
         case 0 :
             info.innerHTML = '<p>Wow quel résultat ! '+emojis[1]+'</p><p>Score : <span class="bold">'+(5 - badAnswer)+'/5</span></p>'
             body.classList.add('goat')
