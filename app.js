@@ -10,11 +10,11 @@ function validate() {
         const pAnswer = document.getElementById('answerQ'+i)
         const questionBox = document.getElementById('question'+i)
         if (result.value == responses[i - 1]) {
-            questionBox.classList.add('good')
+            questionBox.classList = 'question good'
             pAnswer.textContent = 'Bonne réponse !'
         }
         else if (result.value !== responses[i - 1]) {
-            questionBox.classList.add('bad')
+            questionBox.classList = 'question bad'
             pAnswer.textContent = 'Mauvaise réponse !'
             badAnswer+=1
         }  
