@@ -38,6 +38,13 @@ body {
     gap: 20px;
     width: 500px;
 
+    .good {
+      background-image: linear-gradient( -117deg,  rgba(123,216,96,1) 39.2%, rgb(55, 255, 0) 156.2% );
+    }
+    .bad {
+      background-image: radial-gradient( circle 817.6px at 10% 20%,  rgb(255, 119, 0) 0%, rgb(251, 40, 16) 20.9%, rgba(178,34,34,1) 100.2% );
+    }
+
     .question, .infoBottom {
       width: 100%;
       display: flex;
@@ -71,10 +78,19 @@ body {
       }
     }
 
-    .infoBottom p{
-      font-size: 16px;
+    .infoBottom div{
+      font-size: 14px;
       text-align: center;
       width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 4px;
+      justify-content: center;
+
+      &.column {
+        flex-direction: column;
+        gap: 10px;
+      }
     }
 
     button {
@@ -101,3 +117,4 @@ body {
   }
 
 }
+
